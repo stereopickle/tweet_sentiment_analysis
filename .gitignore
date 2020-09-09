@@ -1,0 +1,6 @@
+
+*.pkl
+*.csv
+.ipynb_checkpoints/001.Data_Cleaning-checkpoint.ipynb
+.ipynb_checkpoints/010.Preprocessing-checkpoint.ipynb
+.DS_Store
