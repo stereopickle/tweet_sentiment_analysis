@@ -10,3 +10,5 @@
 .ipynb_checkpoints/021.Model_CNN-checkpoint.ipynb
 .ipynb_checkpoints/023.Model_BERT-checkpoint.ipynb
 __pycache__/custom_functions.cpython-38.pyc
+MODEL/LSTM_v1.h5
+.ipynb_checkpoints/020.Model_Evaluation-checkpoint.ipynb
