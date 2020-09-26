@@ -12,3 +12,4 @@
 __pycache__/custom_functions.cpython-38.pyc
 MODEL/LSTM_v1.h5
 .ipynb_checkpoints/020.Model_Evaluation-checkpoint.ipynb
+*.pyc
