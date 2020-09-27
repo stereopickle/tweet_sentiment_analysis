@@ -30,7 +30,7 @@ Both sensitivity and precision are equally important in our business case, so I 
 
 ### Modeling
 Largely I used the Bag of Words approach and the deep learning approach. 
-For the Bag of Words models, I calculated the simple count vectors and TF-IDF vectors and ran it through the Naive Bayes and SVM. For deep learning approach, an LSTM model was tested with and without the GloVe word embedding weights. Lastly BERT with PyTorch (on Google Colab) was tested.
+For the Bag of Words models, I calculated the simple count vectors and TF-IDF vectors and ran it through the Naive Bayes and SVM. For deep learning approach, an LSTM model was tested with and without the [GloVe](https://nlp.stanford.edu/projects/glove/) word embedding weights (pretrained 200d Twitter data). Lastly BERT with PyTorch (on Google Colab) was tested.
 
 
 ## Results
