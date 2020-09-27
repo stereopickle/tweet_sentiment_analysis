@@ -26,13 +26,40 @@ Additionally, the percentage of capitalized characters, a number of exclamation 
 
 ## Evaluation
 ### Evaluation Metrics
-Both sensitivity and precision are equally important in our business case, so we used f1-score as our evaluation metrics. We took the macro-average across all classes, as we have pretty significant class imbalance.
+Both sensitivity and precision are equally important in our business case, so I used f1-score as our evaluation metrics. I took the macro-average across all classes, as we have pretty significant class imbalance.
 
 ### Modeling
 Largely I used the Bag of Words approach and the deep learning approach. 
-For the Bag of Words models, I calculated the simple count vectors and TF-IDF vectors and ran it through the Naive Bayes and SVM. For deep learning approach, an LSTM model was tested with and without the GloVe word embedding weights. Lastly BERT 
+For the Bag of Words models, I calculated the simple count vectors and TF-IDF vectors and ran it through the Naive Bayes and SVM. For deep learning approach, an LSTM model was tested with and without the GloVe word embedding weights. Lastly BERT with PyTorch (on Google Colab) was tested.
 
 
 ## Results
+| Model | Accuracy | Macro_F1 | Cohen's Kappa |
+| --- | --- | --- | --- |
+| Baseline | 0.48 | 0.34 | 0.01 | 
+| Count Vectors + Naive Bayes | 0.55 | 0.45 | 0.21 |
+| Count Vectors + SVM | 0.61 | 0.49 | 0.26 |
+| TF-IDF + Naive Bayes | 0.55 | 0.47 | 0.24 |
+| TF-IDF + SVM | 0.61 | 0.46 | 0.25 |
+| LSTM + GloVe | **0.68** | 0.46 | **0.32** | 
+| LSTM + GloVe iteration | 0.63 | **0.50** | 0.29 |
+| BERT (PyTorch) | 0.67 | 0.48 | 0.31 |
 
+Overall performance was not yet optimal. Generally the model sacrificed great deal of accuracy, trying to capture the minority class (negative emotion). The current approach will improve with more data especially with the negative emotion.
 
+## Final model architecture
+| Layer (type) | Output Shape | Param # |
+| --- | --- | --- | 
+| embedding_28 (Embedding) | (None, 19, 200) | 600000 |
+| dropout_19 (Dropout) | (None, 19, 200) | 0 |
+| lstm_28 (LSTM) | (None, 200) | 320800 |
+| dense_50 (Dense) | (None, 200) | 40200 |
+| dense_51 (Dense) | (None, 3) | 603 |
+
+Final model showed overll 63% of accuracy with Cohen's Kappa of 0.29 and .50 macro-average F1-score. 
+
+[!SHAP](PNG/SVM_SHAP_plots.png) 
+Looking at the Shapley value shows that words that contribute the most to negative emotion is rather ambiguous at this point.
+
+## Future Direction
+As discussed above, current model has a high variance issue due to small amount of negative emotion data. Collecting more data will improve our model further.
