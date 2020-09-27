@@ -9,6 +9,7 @@ The goal of the project is to develop a classification model that classifies whe
 Data was sourced from [data.world](https://data.world/crowdflower/brands-and-product-emotions), which provided over 8000 tweets that have been classified to be whether positive, negative, or neutral by human contributors. 
 
 ![target distribution](/PNG/target_distribution.png)
+
 After removing all tweets classified to be "I can't tell", the tweets were split into train, valid, test sets (7:1.5:1.5). Our final training data consists of 2,651 tweets with no emotion, 1,545 positive, and 292 negative. 
 
 ## NLP Preprocessing
@@ -59,6 +60,7 @@ Overall performance was not yet optimal. Generally the model sacrificed great de
 Final model showed overll 63% of accuracy with Cohen's Kappa of 0.29 and .50 macro-average F1-score. 
 
 ![SHAP](PNG/SVM_SHAP_plots.png) 
+
 Looking at the Shapley value shows that words that contribute the most to negative emotion is rather ambiguous at this point.
 
 ## Future Direction
