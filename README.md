@@ -4,6 +4,12 @@
 The goal of the project is to develop a classification model that classifies whether a tweet about a product or brand is positive, negative or neutral. 
 
 ## Repo Structure
+- *001.Data_Cleaning.ipynb* Contains initial cleaning steps
+- *010.Preprocessing_Feature_Engineering.ipynb* Contains full text preprocessing steps
+- *020.Model_BoW.ipynb* Classification using count vectors and TF-IDF vectors
+- *022.Model_RNN.ipynb* Classification using LSTM + Word Embedding
+- *023.Model_BERT.ipynb* Classification using BERT through PyTorch (google colab)
+- *custom_functions.py* Custom function used for BoW evaluation
 
 ## Data 
 Data was sourced from [data.world](https://data.world/crowdflower/brands-and-product-emotions), which provided over 8000 tweets that have been classified to be whether positive, negative, or neutral by human contributors. 
